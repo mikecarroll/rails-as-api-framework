@@ -1,6 +1,6 @@
 {
-  "name": "presentation-comparing-mobile-api-frameworks",
-  "version": "0.0.0",
+  "name": "rails-as-api-framework",
+  "version": "1.0.0",
   "dependencies": {
     "prism": "gh-pages"
   }
