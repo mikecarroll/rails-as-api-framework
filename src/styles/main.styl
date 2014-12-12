@@ -1,0 +1,78 @@
+// New to Stylus? Check out http://learnboost.github.io/stylus
+// Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
+
+// Import CSS from "node_modules" and "bower_components"
+// thanks to Stylus' "import css" and "paths" options
+
+@import 'prism/themes/prism-okaidia.css'
+// Check out "bower_components/prism/themes/" for available themes
+
+@font-face
+  font-family Futura
+  font-style normal
+  src url(src/fonts/Futura.ttf)
+
+ul
+  width 70%
+
+.disc
+  list-style-type disc
+
+.answers
+  clear both
+
+.column-left
+  padding 30px
+  float left
+  width 40%
+
+.column-middle
+  display inline-block
+  padding-top 80px
+  font-size 40px
+  width 10%
+
+.column-right
+  padding 30px
+  float right
+  width 40%
+
+.columns-holder
+  width 100%
+  margin 0 auto
+
+.futura
+  font-family Futura
+
+.highlight
+  color red
+
+.image-circle
+  display block
+  margin 0 auto
+  width 160px
+  height 160px
+  border-radius 160px
+  &--small
+    width 70px
+    height 70px
+
+.image-logo
+  display inline-block
+  margin 0 10px
+  width 80px
+  height 80px
+  &--small
+    width 70px
+    height 70px
+
+.image-pf
+  display block
+  margin 0 auto
+  height 80%
+
+.margin-top-20
+  margin-top 20px
+
+.strikethrough
+  text-decoration line-through

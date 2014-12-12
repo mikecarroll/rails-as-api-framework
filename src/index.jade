@@ -1,0 +1,381 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Comparing Mobile API Frameworks
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section(data-bespoke-backdrop='emphatic')
+        h1 Comparing
+        h1 Mobile
+        h1 API Frameworks
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 /api/users/me.json
+        pre
+          code.language-javascript.
+            {
+              name: 'Michael Carroll',
+              hats: [ 'RubiconMD',
+                      'Aqua.io',
+                      'Cornell Tech (Pushcart)' ],
+              background: [ 'Chinese philosophy',
+                            'book editor',
+                            'Rama (travel app)' ]
+            }
+
+      section(data-bespoke-backdrop='emphatic')
+        h1.highlight Comparing
+        h1 Mobile
+        h1 API Frameworks
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 TASTE
+        h3 (a quick aside)
+        img.image-pf.bullet(src='images/pink-flamingos.jpg')
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet Who is the better artist?
+        .columns-holder
+          .column-left
+            img.image-circle(src='images/mona-lisa.jpg')
+            h4 Da Vinci
+          .column-middle vs
+          .column-right
+            img.image-circle(src='images/medusa-caravaggio.jpg')
+            h4 Caravaggio
+        .answers
+          h2.top-padded.bullet Caravaggio
+          h3.bullet (Da Vinci was the "USA Today" of Renaissance artists)
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet The better French philosopher?
+        .columns-holder
+          .column-left
+            img.image-circle(src='images/sartre.jpeg')
+            h4 Sartre
+          .column-middle vs
+          .column-right
+            img.image-circle(src='images/derrida.jpg')
+            h4 Derrida
+        .answers
+          h2.top-padded.bullet Both whiners!
+          h3.bullet (Pick a German instead, like Kant or Wittgenstein.)
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet Better OS?
+        .columns-holder
+          .column-left
+            img.image-circle(src='images/osx.png')
+            h4 OSX
+          .column-middle vs
+          .column-right
+            img.image-circle(src='images/linux.svg.png')
+            h4 Linux
+        .answers
+          h3.top-padded.bullet Choice between 'enlightened dictatorship' or 'socialism with Torsvaldsian characteristics'?
+          h4.bullet (I'm indifferent. Just be happy we aren't stuck with just one or the other.)
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 The point being?
+        br
+        ul.disc
+          li
+            b "Comparison" exercises can easily fall into a solipsistic morass of mere preference
+          li
+            b There is value in analyzing individual systems as a taste-making exercise
+          li 
+            b Even if there's no "right answers", there certainly are "superior solutions"
+          li 
+            b Confident, but ever-evolving taste is more important for a CTO than technical skills
+          li 
+            b My go-to framework is Rails, but I'm happy to trash talk your preferred framework in the Q&A
+
+      section(data-bespoke-backdrop='emphatic')
+        h1.strikethrough Comparing
+        h1.highlight Mobile
+        h1 API Frameworks
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 Mobile development:
+
+        .image-list.bullet
+          img.image-logo(src='images/apple.svg.png')
+          img.image-logo(src='images/android.svg.png')
+          img.image-logo(src='images/windows.svg.png')
+
+        br
+        ul
+          li Writing software for a specialized OS/VM
+          li Arcane, non-intuitive APIs
+          li Must use a "native" programming language most people hate (& often lives only for this platform)
+
+        .image-list.bullet
+          img.image-logo(src='images/safari.svg.png')
+          img.image-logo(src='images/Chrome.svg')
+          img.image-logo(src='images/ie.svg.png')
+          img.image-logo(src='images/firefox.svg.png')
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet front-end + back-end
+        h2.bullet ⬇<br /> apps + API server
+        h3.margin-top-20.bullet Some benefits of this paradigm:
+
+        ul.disc.margin-top-20
+          li one public, documented API for everything
+          li open sourcing of frontends/apps
+          li no more integration testing!
+
+      section(data-bespoke-backdrop='emphatic')
+        h1.strikethrough Comparing
+        h1.strikethrough Mobile
+        h1.bullet API Framework<div class='strikethrough' style='display:inline-block;'>s</div>
+        h2.bullet ~~~ or ~~~
+
+      section(data-bespoke-backdrop='emphatic')
+        h1 Michael Evangelizes
+        h1 Ruby on Rails
+        h1 as an API Server
+
+      section(data-bespoke-backdrop='emphatic')
+        pre.bullet
+          code.language-ruby.
+            gem 'rails'
+
+        ul
+          li Opinionated -- convention over configuration
+          li Ruby & Rails communities
+          li RESTful by design
+
+      section(data-bespoke-backdrop='emphatic')
+        pre
+          code.language-ruby.
+            # routes.rb
+            MichaelsPicks::Application.routes.draw do
+              resources :films
+            end
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet REST (Representational State Transfer)
+
+        ul
+          li Intuitive convention for CRUD over HTTP(S)
+          li Lets HTTP verbs do all the talking
+          li Know resource name, know how to manipulate it
+
+        pre
+          code.language-bash.
+            $ rake routes | grep 'film'
+            GET        /films(.:format)          films#index
+            POST       /films(.:format)          films#create
+            GET        /films/:id(.:format)      films#show
+            PUT        /films/:id(.:format)      films#update
+            DELETE     /films/:id(.:format)      films#destroy
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet Why REST JSON APIs?
+
+        ul
+          li Server is 'stateless' (no client context storage)***
+          li Easier caching (!= not <i>easy</i> caching)
+          li Lots of interface libraries (Angular, iOS, Android)
+          li JSON is lightweight
+          li Easy to document & unit test!
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet ABC
+
+        ul(style="text-align:left;")
+          li
+            b Always
+          li
+            b Be
+          li
+            b Comprehensively testing and documenting the living hell out of your API
+
+        ul.disc
+          li With REST APIs, integration tests are recyclable (X request returns Y JSON response)
+          li Document what's important enough to test; test what you document
+          li A little pain and investment in doing this from the beginning saves a lot of time later (in knowledge transfer)
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 JSON Views
+        pre
+          code.language-ruby.
+            class FilmsController
+              def index
+                @films = Film.all
+              end
+
+              def show
+                @film = Film.find params[:id]
+              end
+            end
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 Don't dump it all to JSON!
+        pre
+          code.language-ruby.
+            class FilmsController
+              def index
+                @films = Film.all.to_json #No.
+              end
+
+              def show
+                @film = Film.find(params[:id]).to_json #STOP IT!
+              end
+            end
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 Instead use a JSON templating system, just like with HTML views.
+
+        pre.bullet
+          code.language-ruby.
+            gem 'rabl'
+
+        ul.disc
+          li Share helper methods (like date formatters)
+          li Re-use partials
+          li Keep it readable
+        
+        p.bullet Best templating systems even automatically generate XML (in case the developers you work with are masochists)
+
+      section(data-bespoke-backdrop='emphatic')
+        pre.bullet
+          code.language-ruby.
+            # views/films/show
+            object @film
+
+            attributes :id, :title, :synopsis, :comments
+
+            child :imdb_metadata
+            node (:date_picked) { |i| date_picked(i.created_at) }
+
+        pre.bullet
+          code.language-ruby.
+            # views/films/index
+            collection @films
+
+            extends "views/films/show"
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 Before you run off and start coding...
+
+      section(data-bespoke-backdrop='emphatic')
+        h2 Consider the following index response:
+
+        pre.bullet
+          code.language-javascript.
+            // GET /films
+            [{
+              id: 1,
+              title: "Unforgiven",
+              synopsis: "Clint Eastwood is a cowboy. People die.",
+              comments: "After watching this movie,
+                         my wife began writing a hate e-mail
+                         to Gene Hackman -- that's how good it is."
+              imdb_metadata: {
+                              director: "Client Eastwood",
+                              screenplay: "David Peoples",
+                              actors: [
+                                        "Clint Eastwood",
+                                        "Ed Harris",
+                                        "Morgan Freeman",
+                                        "That guy that played
+                                        Dumbledore in the first
+                                        two Harry Potter films.",
+                                        ...
+                                        ]
+                             }
+              },
+             ...
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet Index action is slow to load
+
+        p Don't need the imdb_metadata to populate our index table anymore, so we remove it and...
+
+        h2.bullet Insanity ensues!
+
+        ul
+          li Old iOS app was listing "director" in the menu.
+          li Only 40% of users upgraded to new version.
+          li Users on the old version start leaving angry reviews about broken app.
+
+        h3.bullet Shitty dilemma: Slow for all vs. broken for some?
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet Versioning to the rescue!
+
+        pre
+          code.language-ruby.
+            gem 'versionist'
+
+        ul.disc
+          li Manages route versioning
+          li Copies your views to new files
+          li Allows for scoping of logic
+
+      section(data-bespoke-backdrop='emphatic')
+        pre
+          code.language-ruby.
+            # routes.rb
+
+            # /films
+
+            resources :films
+
+            # becomes api/v1/films
+
+            api_version(module: "api/v1", path: {:value => "v1"}) do
+              resources :films
+            end
+
+      section(data-bespoke-backdrop='emphatic')
+        pre
+          code.language-ruby.
+            # controllers/films_contoller.rb 
+
+            class FilmsController
+              ...
+            end
+
+            # becomes controllers/api/v1/films_contoller.rb 
+
+            class Api::V1::FilmsController
+              ...
+            end
+
+      section(data-bespoke-backdrop='emphatic')
+        h3.bullet Versioning means a lot more code and outmoded logic in your project...
+        h3.bullet but it also means never having to say "we can't change that because it might break something" (unless it's a convenient excuse you want, of course).
+
+      section(data-bespoke-backdrop='emphatic')
+        h2.bullet Summary
+
+        ul
+          li Use framework with REST baked in
+          li API should be stateless
+          li ABC
+          li JSON templating
+          li User versioning from get-go
+          li Pick a language with the right dev community!
+
+      section(data-bespoke-backdrop='emphatic')
+        pre
+          code.language-javascript.
+            {
+              github: 'https://github.com/mikecarroll',
+              email: 'michael@carroll.io',
+              twitter: '@_mcarroll_'
+            }   
+
+    script(src='build/build.js')
+    script(src='scripts/prism-ruby.min.js')
+    script(src='scripts/prism-bash.min.js')
